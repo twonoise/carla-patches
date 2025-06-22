@@ -6,7 +6,7 @@ DESCRIPTION
 
 [Carla plugin host](https://github.com/falkTX/Carla) is well known and quite useful software, especially if you not only musician, but also electronic or radio engineer. 
 
-_However_, it contain a number of long lasting bugs, most of them are not likely to going to be solved (i am would be happy if it is wrong). So i try to solve some, as well as add some new scalable art.
+_However_, it contain a number of long lasting bugs, most of them are not likely to going to be solved (i am would be happy if it is wrong). So i try to solve some, as well as add some new <del>bugs</del> scalable art.
 
 I have carefully described each bit of what's changed or new: **please see CHANGELOG** and read below.
 
