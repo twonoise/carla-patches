@@ -27,6 +27,7 @@ With Qt5:
     
 With Qt6:	
 
+    pacman -S python-pyqt6
     make clean && make FRONTEND_TYPE=6
 
 _Addendum: New key list_
