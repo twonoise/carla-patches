@@ -64,6 +64,7 @@ Edits value, except special cases: with Wet or Vol knobs when Left click is used
 
 Mouse scroll:
 ---
+(As well as **DJ Jog device** wheel action, it's often just HID scroll wheel)<br>
 * For floating point values: 
 Continuous change. Precision control: same as with `PgUp`, `PgDn`.
 * For integer and boolean values: 
