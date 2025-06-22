@@ -70,7 +70,7 @@ Continuous change. Precision control: same as with `PgUp`, `PgDn`.
 * For integer and boolean values: 
 Cycles all possible values, with step best suited for span. Precision control: Only `Shift` and `Ctrl` will work.
 
-Scalepoints: _(But, see [#1976](https://github.com/falkTX/Carla/issues/1976))_
+Scalepoints: <small>_(But, see [#1976](https://github.com/falkTX/Carla/issues/1976))_</small>
 ---
 If exist for this control, they are used when values using keyboard and mouse _cycling_, but not when _direct set_ (drag and 0 to 100 percent set) which still allows to use intermediate values, if any.
 
