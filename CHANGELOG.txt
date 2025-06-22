@@ -109,7 +109,7 @@ With Qt6:	make clean && make FRONTEND_TYPE=6
 
 Hotkeys on mouse hover
 ----------------------
-See #1971 ticket for key list.
+See #1971 ticket for key list, or README here.
 
 
 REAR SIDE
@@ -118,7 +118,7 @@ Png/svg substrate stuff removed from rack skins bottom (knob) area.
 QDial replaced to QWidget, else impossible to solve #11, and due to all methods of QDial we have already replaced anyway. Also somewhat refactored (lesser function calls) in hope to get a bit more performance.
 Tested for CPU usage.
 Zynfx internal stuff commented out, in prefer of external Zyn plugins, which are tested (have both int. and ext. is looks like mutually exclusive currently).
-#1478 fix if for LADSPA and LV2 for now, others are i need more info how to test.
+#1478 fix is for LADSPA and LV2 for now, others are i need more info how to test.
 Extra python deps: TODO
 
 Drawback: The code is runs more and more away from original one. While i try to make least possible intervention, but make it all works requires deep changes sometimes.
