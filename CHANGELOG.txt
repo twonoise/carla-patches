@@ -1,0 +1,204 @@
+
+Changes are (mostly) Rack view UI/UX.
+
+FRONT SIDE
+----------
+New knobs for 4 skin groups (internal, calf, openav, zynfx).
+Added pushbuttons for booleans, and integers @ (selectable) [0,1] or [0,1,2] ranges. The idea is to make buttons well different from knobs, while still keep skin style, include disabled items.
+Added several types of output parameter displays. There is no more non-shown controls now. Note: displays for non-default skins are WIP (but works). Feedback welcome.
+All of these are fully scalable now (hidpi welcome).
+All widgets have hover enlighting.
+All widgets use HSL color model, so more color options presented, include high contrast tweak (see Tweaks).
+Mouse wheel fixed (#11) and gives exact control for bools/ints, while smooth one for floats. Use with Ctrl and/or Shift to get four increment speeds/steps (fast, normal, fine, extra fine). Mouse drag also now have these four. Left mouse button toggles pushbuttons. Middle button set default value, double click edits it (#1569, #1570).
+Hotkeys introduced when mouse hover active (no mouse press need) for both pushbuttons and knobs: 0...9 to set absolute value; Home, End, PgUp, PgDn. Note: 'Home' interferes with Canvas control hotkey (use 0 then, it's same).
+Knob context menu unified and updated, have now hotkey suggestions.
+Rack context menu enhanced, include group change of skin was added.
+Tooltips with eyecandy precisions added.
+Scalepoint tooltips added.
+Custom colors are now match q'ty of displayed controls; gradients are can be easily set by any hue from/to (see Tweaks).
+Solved some more UI tickets.
+Many other "small" UI/UX fixes/improvements, like #1934.
+Added pusheable Wet & Vol buttons, act now as Bypass (Thru line) and Mute (#52). Idea to make wet/vol knobs working as pusheable encoders. Previous state restored on un-push. Tested with remote control. Auto un-bypass on normal mouse drag (with lost of prev. value). Single click & 0 and Space keys on hover activated. Also see Tweaks.
+Scalepoints for knobs and pushbuttons now cycled with Space key on hover, or left click; while still allowing to select intermediate states (if any) with keyboard shortcuts or mouse wheel (as with "normal" knobs/buttons). Note that Space key does nothing on "normal" knob (yet), and cycles "normal" pushbutton.
+Fixed #1478.
+Added Stereo panning, and also Front-Rear balance for 3-ch (like Stereo+Bass) and 4-ch plugins (for > 4-ch, only first four are tuned), along with classic L, R knobs. They all are not mutex now and can be combined. Not used control not eat extra DSP. It is saveable and remotely controlled as usual. Note: Classic L, R are special type mixing knobs; while newly added panning can only reduce amplitudes, but never increase.
+Knob light arc starts from center for symmetrical span values (-N to N) (tweakable). (For default skin yet).
+New scalable Tube skin added. Bakelite, glass, magic eyes, VFDs, neon indicators and argon filled "tuneon" bargraphs. Nixies created using true arcs. Nixies are used for display integers @ [0..(1..19)] span. Added pointer-style (chickenhead) knob for integer selectors (for tube skin yet). Ideas how it should look for other skins, are welcome.
+XY controller knobs are updated to make it all scalable.
+XY controller mouse buttons behaviour enhanced. Left button works as before. Right button gives smooth movement, like using 'smooth' checkbox. Middle button resets to center, include per-axis action when used on knob. And right and middle buttons can be joined, so allows to reset smoothly. Ctrl, Shift makes smoothing slower and faster. Reversed Y scale parameter added (see below).
+Fixed #1979 (main problem, but not error messages).
+XY controller enhanced to un-tie directly connected out X, Y ports from input ones, this not only makes external input possible, but also allow to use smoother between them, not on screen pad only. Let's try to connect discrete On-Off pedal to input and get flow of smoothed MIDI values on output: this ramp (slope) control is well suitable for synth's LFO, filter, or other smooth control. Note: GUI should be opened, even when external input control used only.
+Three input control parameters were added to XY controller: speed, reversed Y axis, and linear smoothing. All controls are now exposed as input ports.
+Added optional program (preset) drop-down list (similar to '(m)presets') on most skins, include compacted ones.
+Added 'Reload' file. This "dangerous" option disabled out-of-box, only visible/working when its tweak enabled by user. It quick-reloads currently opened file, and any changes will be lost. It is intended for plugin developers mostly. Note: plugin libraries can be cached by system, so may not be refreshed with this "warm" restart.
+New icons added. Icon labels now can be hidden via menu, if this new stuff does not fit on toolbar.
+#312 semi-fixed, using 'Mute all' now available on toolbar, then enable one plugin by its  volume knob push.
+New Xray tab added to Edit dialog.
+Fixed my own bug with miss of newly-added Qt6 items at qt_compat glossary.
+Tweaks added, include per-skin. This is string of 'TweakName1':Value, 'TweakName2':Value, 'skinnameTweakName':Value, ... at Settings -> Configure Carla dialog. They are tunes many Rack display settings, and saved at same place as other settings (per-user, not per .carxp files). Default settings are selected to be most close to classic look, except that some controls, which were thrown away before, are shown now out-of-box: most notably, buttons. Note: Tweaks are WIP, suggestions welcome!
+
+Tweak examples:
+--------------
+'ShowPan':0, 		Show Panning knob on rack (if plugin can Balance)
+
+'ShowForth':0, 		Show Forth knob (Front-Rear balance) on rack (if plugin can Balance)
+
+'WetVolPush':0, 	Wet&Vol knobs are pusheable with keyboard/mouse to Bypass and Mute #52
+
+'WetVolPushLed':1,  0=Use classic look; 1=Use LED to display Bypass or Mute state
+
+'WetVolOnCompact':0, Dry/wet, Volume knobs visible on Compacted slots #1884, #1923
+
+'Tooltips':0,		Show tooltips (note, it eats some CPU)
+
+'MoreSpace':0,		Compact some areas to give more free space to knobs
+
+'GapAuto':0,		Expand inter-knob gap to fit either label length or GapMin, but not more than GapMax #1919
+
+'ShortenLabels':1, 	0=Do not use smart name shortener, see GapAuto
+
+'GapMin':0, value (px)
+
+'GapMax':100, value (px)
+
+'KnobTravel':(undefined),	Or per skin like 'tubeKnobTravel':300, angle span (travel) of knobs.
+
+'SymmetricArc':0,	Knob light arc starts from center for symmetrical span values
+
+'ColorFollow':0,	Use plugin panel color tint to colorizing of widgets on this panel
+
+'ButtonHaveLed':1,	0=LEDs are off of buttons (better for display 3-state buttons) (not all skins)
+					1=LEDs are on buttons (much adorable look)
+
+'ColoredNeon':1,	For Tube skin,	1 = show pushbuttons state (neon lamp) with color
+									0 = show pushbuttons state (neon lamp) with brightness
+
+'HighContrast':0,	Widgets becomes brighter by make it almost monochrome
+
+'ShowDisabled':0,	Show disabled input and output controls (debug mostly)
+
+'ShowOutputs':1, 	Show output parameters, 0=Default
+
+'ShowButtons':1, 	Show pushbutton instead of knob when applicable (see News)
+
+'Button3Pos':1, 	0=Buttons are integers with [0,1] range, 1=with [0,1,2] range
+
+'TwoLineLabels':0, 	TODO
+
+'ShowPrograms':0,		         These four tweaks shows
+'ShowMidiPrograms':0,            Program, or MIDI preset selector
+'ShowProgramsOnCompact':0,       (or both) when they are exist within
+'ShowMidiProgramsOnCompact':0,   plugin. It's safe to just enable all.
+
+'ColorFrom':-0.1,	value (float -1.0 to 1.0) "Rainbow" gradients used when ColorFollow=0
+
+'ColorSpan':0.4,	value (float -1.0 to 1.0) "Rainbow" gradients used when ColorFollow=0
+
+'Auto7segSize':0,	Override internal per-skin pre-tuned 7 segment displays look
+
+'Auto7segWidth':1,	Override internal per-skin pre-tuned 7 segment displays width
+
+'ShowReload':0, 	Developers option: quick-reloads currently opened file. Changes will be LOST!
+
+
+COMPILE
+-------
+With Qt5:	make clean && make
+With Qt6:	make clean && make FRONTEND_TYPE=6
+
+
+Hotkeys on mouse hover
+----------------------
+See #1971 ticket for key list.
+
+
+REAR SIDE
+---------
+Png/svg substrate stuff removed from rack skins bottom (knob) area.
+QDial replaced to QWidget, else impossible to solve #11, and due to all methods of QDial we have already replaced anyway. Also somewhat refactored (lesser function calls) in hope to get a bit more performance.
+Tested for CPU usage.
+Zynfx internal stuff commented out, in prefer of external Zyn plugins, which are tested (have both int. and ext. is looks like mutually exclusive currently).
+#1478 fix if for LADSPA and LV2 for now, others are i need more info how to test.
+Extra python deps: TODO
+
+Drawback: The code is runs more and more away from original one. While i try to make least possible intervention, but make it all works requires deep changes sometimes.
+
+
+FILELIST
+--------
+(diff -ur Carla/source/ Carla.my16/source/ | grep -v '^Only in' > source.patch)
+
+patch -b -p1 < ../source.patch
+------------------------------
+patching file source/backend/CarlaBackend.h
+patching file source/backend/CarlaHost.h
+patching file source/backend/CarlaPlugin.hpp
+patching file source/backend/CarlaStandalone.cpp
+patching file source/backend/engine/CarlaEngine.cpp
+patching file source/backend/engine/CarlaEngineNative.cpp
+patching file source/backend/engine/CarlaEngineOsc.hpp
+patching file source/backend/engine/CarlaEngineOscHandlers.cpp
+patching file source/backend/engine/CarlaEngineOscSend.cpp
+patching file source/backend/plugin/CarlaPlugin.cpp
+patching file source/backend/plugin/CarlaPluginFluidSynth.cpp
+patching file source/backend/plugin/CarlaPluginInternal.cpp
+patching file source/backend/plugin/CarlaPluginInternal.hpp
+patching file source/backend/plugin/CarlaPluginLADSPADSSI.cpp
+patching file source/backend/plugin/CarlaPluginLV2.cpp
+patching file source/backend/plugin/CarlaPluginNative.cpp
+patching file source/frontend/carla_backend.py
+patching file source/frontend/carla_backend_qtweb.py
+patching file source/frontend/carla_host.py
+patching file source/frontend/carla_host_control.py
+patching file source/frontend/carla_settings.py
+patching file source/frontend/carla_shared.py
+patching file source/frontend/carla_skin.py
+patching file source/frontend/carla_widgets.py
+patching file source/frontend/qt_compat.py
+patching file source/frontend/widgets/collapsablewidget.py
+patching file source/frontend/widgets/commondial.py
+patching file source/frontend/widgets/digitalpeakmeter.py
+patching file source/frontend/widgets/paramspinbox.py
+patching file source/frontend/widgets/pixmapkeyboard.py
+patching file source/frontend/widgets/racklistwidget.py
+patching file source/frontend/widgets/scalabledial.py
+patching file source/frontend/xycontroller-ui
+patching file source/native-plugins/xycontroller.cpp
+patching file source/rest/carla-host.cpp
+patching file source/rest/rest-server.cpp
+patching file source/utils/CarlaBackendUtils.hpp
+patching file source/utils/CarlaStateUtils.cpp
+patching file source/utils/CarlaStateUtils.hpp
+
+
+patch -b -p1 < ../resources.patch
+---------------------------------
+patching file resources/resources.qrc
+patching file resources/ui/carla_edit.ui
+patching file resources/ui/carla_host.ui
+patching file resources/ui/carla_settings.ui
+patching file resources/ui/xycontroller.ui
+
+add to  resources/16x16/
+------------------------
+add-from-favorites.svgz
+add-jack-alt.svgz
+add-jack.svgz
+audio-volume-medium.svgz
+audio-volume-muted-orig.svgz
+audio-volume-muted.svgz
+balance-alt.svgz
+balance-alt2.svgz
+balance.svgz
+compact-alt.svgz
+compact.svgz
+dry.svgz
+emblem-favorite.svgz
+restore-alt.svgz
+restore.svgz
+skin.svgz
+system-shutdown.svgz
+system-turnon.svgz
+view-refresh-purple.svgz
+wet.svgz
+--------- Total: 20

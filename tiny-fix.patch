@@ -1,0 +1,20 @@
+--- Carla.my17/source/frontend/carla_skin.py	2025-03-28 14:09:44.281442867 +0300
++++ Carla/source/frontend/carla_skin.py	2025-04-19 11:42:12.229191001 +0300
+@@ -611,7 +611,7 @@
+             if self.fPluginInfo['hints'] & PLUGIN_CAN_DRYWET or showDisabled:
+ 
+ 
+-                self.dial0 = ScalableDial(self, PARAMETER_DRYWET, 100, 1.0, 0.0, 1.0, "Dry/Wet", ScalableDial.CUSTOM_PAINT_MODE_CARLA_WET_MINI, 0, "%",  self.fSkinStyle, whiteLabels, self.fTweaks)
++                self.dial0 = ScalableDial(self, PARAMETER_DRYWET, 100, 1.0, 0.0, 1.0, "Dry/Wet", ScalableDial.CUSTOM_PAINT_MODE_CARLA_WET_MINI, -1, "%",  self.fSkinStyle, whiteLabels, self.fTweaks)
+                 self.dial0.setObjectName("dial0")
+                 self.ui.horizontalLayout_2.insertWidget(6, self.dial0)
+ 
+@@ -628,7 +628,7 @@
+ 
+             if self.fPluginInfo['hints'] & PLUGIN_CAN_VOLUME or showDisabled:
+                 # self.dial1 = ScalableDial(self.ui.dial1, PARAMETER_VOLUME, 254, 1.0, 0.0, 1.27, "Volume", ScalableDial.CUSTOM_PAINT_MODE_CARLA_VOL_MINI, 0, "%",  self.fSkinStyle, whiteLabels, self.fTweaks)
+-                self.dial1 = ScalableDial(self, PARAMETER_VOLUME, 127, 1.0, 0.0, 1.27, "Volume", ScalableDial.CUSTOM_PAINT_MODE_CARLA_VOL_MINI, 0, "%",  self.fSkinStyle, whiteLabels, self.fTweaks)
++                self.dial1 = ScalableDial(self, PARAMETER_VOLUME, 127, 1.0, 0.0, 1.27, "Volume", ScalableDial.CUSTOM_PAINT_MODE_CARLA_VOL_MINI, -1, "%",  self.fSkinStyle, whiteLabels, self.fTweaks)
+                 self.dial1.setObjectName("dial1")
+                 self.ui.horizontalLayout_2.insertWidget(6, self.dial1)
+ 
