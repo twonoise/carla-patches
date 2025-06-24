@@ -85,6 +85,12 @@ As before/classic (Continuous change); added `Ctrl` to increase precision. But:
 - * work as usual with intermediate value set possibility. (Selected by tweak).
 * If it is special Wet or Vol knobs and there is special state **MUTE** or **THRU** (Bypass) enabled and active: drag will un-mute/un-bypass it, but unlike of click, previous value is lost and replaced by drag result.
 
+GALLERY
+-------
+
+Skin tweaks<br>
+![tweaks](https://github.com/user-attachments/assets/095bf6c0-ffda-4053-8b1c-ae6074f3f7a0)
+
 
 
 
