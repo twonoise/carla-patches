@@ -94,6 +94,12 @@ Skin tweaks<br>
 [#1478](https://github.com/falkTX/Carla/issues/1478) related <br>
 ![carla-balance](https://github.com/user-attachments/assets/5c0f9ff2-67c6-4f0b-9b52-9f2ddae6c00b)
 
+[#1884](https://github.com/falkTX/Carla/issues/1884) <br>
+![carla-collapsed](https://github.com/user-attachments/assets/08a51479-1b8c-4ce1-a727-89feb433a70e)
+
+[#1919](https://github.com/falkTX/Carla/issues/1919) <br>
+![knobs-distance](https://github.com/user-attachments/assets/0d69cbc8-3e9c-417f-a723-6e983c16a176)
+
 
 
 
