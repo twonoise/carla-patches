@@ -10,7 +10,7 @@ _However_, it contain a number of long lasting bugs, most of them are not likely
 
 I have carefully described each bit of what's changed or new: **please see CHANGELOG** and read below.
 
-This patch suite is intended to be used with _current Carla git_ (17000e7 or 378d5db, which are v. 2.6.0-alpha1), _not with release set_. You must know how to patch and compile things.
+This patch suite is intended to be used with _current Carla git_ (54ebc83, which is v. 2.6.0-alpha1), _not with release set_. You must know how to patch and compile things.
 
 I have tested it using 64-bit Archlinux; and only Lv2, Internal, Ladsp, and Sound kits, using JACK only, are tested (but that not means others will not work).
 
