@@ -91,6 +91,8 @@ GALLERY
 Skin tweaks<br>
 ![tweaks](https://github.com/user-attachments/assets/095bf6c0-ffda-4053-8b1c-ae6074f3f7a0)
 
+[#1478](https://github.com/falkTX/Carla/issues/1478) related <br>
+![carla-balance](https://github.com/user-attachments/assets/5c0f9ff2-67c6-4f0b-9b52-9f2ddae6c00b)
 
 
 
