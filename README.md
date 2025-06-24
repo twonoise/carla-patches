@@ -8,7 +8,7 @@ DESCRIPTION
 
 _However_, it contain a number of long lasting bugs, most of them are not likely to going to be solved (i am would be happy if it is wrong). So i try to solve some, as well as add some new <del>bugs</del> scalable art.
 
-I have carefully described each bit of what's changed or new: **please see CHANGELOG** and read below.
+I have carefully described each bit of what's changed or new: **please see CHANGELOG**.
 
 This patch suite is intended to be used with _current Carla git_ (54ebc83, which is v. 2.6.0-alpha1), _not with release set_. You must know how to patch and compile things.
 
