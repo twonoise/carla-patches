@@ -1,6 +1,16 @@
 # carla-patches
 Service pack for Carla plugin host
 
+> [!Important]
+> These patches (in this current/stable form) are currently adopted as is to special Carla git tree. To use it, no more need to patch by hand, but one need to:
+> 
+>     git clone https://github.com/falkTX/Carla/
+>     cd Carla
+>     git checkout rack-ui-rework
+>     make
+>     source/frontend/carla
+> 
+
 DESCRIPTION
 -----------
 
