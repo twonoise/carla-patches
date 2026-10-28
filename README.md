@@ -9,7 +9,15 @@ Service pack for Carla plugin host
 >     git checkout rack-ui-rework
 >     make
 >     source/frontend/carla
-> 
+>
+> Or, for latest updates:
+>
+>     git clone https://github.com/jpka-/Carla-fork/
+>     cd Carla-fork
+>     git checkout rack-ui-rework
+>     make
+>     source/frontend/carla
+
 
 DESCRIPTION
 -----------
